@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ProjectAspNet.Models.Category>;
+@{
+    ViewData["Title"] = "Categories Animals";
+}
+<div class="bodyCategory">
+    <h1>All Animals Categoty</h1>
+    <div class="buttonOptionCategory">
+        <select id="animalSelect">
+            <option>Category</option>
+            @foreach (var optionCategory in Model)
+            {
+                <option value="@optionCategory.CategoryName" id="optionCategoryValue">
+                    @optionCategory.CategoryName
+                </option>
+            }
+        </select>
+    </div>
+    <div class="allAnimals">
+        @foreach (var category in Model)
+        {
+            foreach (var animal in category.Animals!)
+            {
+                <div class="displayDetailsAnimal" data-category="@category.CategoryName">
+                    <div class="divbuttonMoreDetails">
+                        <a href="@Url.Action("DetailsAnimal","Animal", new{ animalId = animal.AnimalId})" class="AButtonMoreDetails">
+                            <button! class="buttonMoreDetails">More Details</button!>
+                        </a>
+                    </div>
+                    <div>
+                        <img src="~/images/@animal.PictureName" height="150px" width="233px" />
+                    </div>
+                    <div>
+                        <p class="NameAnimalDetails">@animal.AnimalName</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#animalSelect').change(function () {
+            var selectedCategory = $(this).val();
+
+            if (selectedCategory === 'all') {
+                $('.displayDetailsAnimal').show();
+            } else {
+                $('.displayDetailsAnimal').hide();
+                $('.displayDetailsAnimal[data-category="' + selectedCategory + '"]').show();
+            }
+        });
+    });
+</script>

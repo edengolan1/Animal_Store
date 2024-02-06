@@ -1,0 +1,21 @@
+﻿@model ProjectAspNet.Models.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="bodyLogin">
+    <div class="login">
+        <h1 class="loginTitle">Login</h1>
+        <form method="post" asp-action="Login" asp-controller="Account" class="formLogin">
+            <div>
+                <input type="text" asp-for="Username" placeholder="Username" value="eden" class="loginUsername" />
+            </div>
+            <div>
+                <input type="password" asp-for="Password" placeholder="Password" value="Eden9123@@" class="loginPassword" />
+            </div>
+            <div class="buttonLogin">
+                <input type="submit" value="Login" class="loginSubmit" />
+            </div>
+        </form>
+    </div>
+</div>

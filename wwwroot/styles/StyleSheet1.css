@@ -1,0 +1,72 @@
+﻿body {
+    font-family: 'Arial Rounded MT';
+    background-color: azure;
+}
+header {
+    width: 97%;
+    height: 70px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.bodyIndex {
+    background-color:azure;
+    color: black;
+    width: 100%;
+    height: 750px;
+}
+.ul {
+    width: 97%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    background-color: azure;
+}
+.ul > li {
+   padding: 20px;
+   font-size: 1.5rem;
+   text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px gray;
+   font-weight: bold;
+   color: gray;
+   cursor: pointer;
+}
+.ul > li > a {
+    text-decoration: none;
+    color: gray;
+}
+.ul :hover {
+    color:black;
+}
+.titleInHomePage > p {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.contentHomePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.displayAnimalsMoreComment {
+    width: 450px;
+    height:300px;
+    border-radius: 20px;
+    font-size: 17px;
+    margin:20px;
+}
+
+.nameAnimal {
+    text-shadow: 2px 2px 5px gray;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.img {
+    width: 450px;
+    height: 300px;
+    opacity: 0.85;
+    border-radius:20px;
+}

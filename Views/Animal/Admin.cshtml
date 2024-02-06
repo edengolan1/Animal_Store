@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProjectAspNet.Models.Category>;
+
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<div class="bodyAdmin">
+    <div class="LoginTrue">
+        <div>
+            Hello: @User.Identity!.Name
+        </div>
+    </div>
+    <div class="buttonNewAnimal">
+        <a href="/Animal/NewAnimal/" class="ANewAnimal">
+            <button!>Add New Animal</button!>
+        </a>
+    </div>
+    <div class="selectCategory">
+        <div class="buttonOptionCategory">
+            <select onchange="ChooseCategory(this.value)" id="animalSelect">
+                <option>Category</option>
+                @foreach (var optionCategory in Model)
+                {
+                    <option value="@optionCategory.CategoryName" id="optionCategoryValue">
+                        @optionCategory.CategoryName
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="allAnimals">
+        @foreach (var category in Model)
+        {
+            foreach (var animal in category.Animals!)
+            {
+                <div class="displayDetailsAnimal" data-category="@category.CategoryName">
+                    <div class="AllButtons">
+                        <div class="divMoreDetails">
+                            <a href="@Url.Action("DetailsAnimal","Animal", new{ animalId = animal.AnimalId})" class="AButtonMoreDetails">
+                                <button! class="buttonMoreDetails">More Details</button!>
+                            </a>
+                        </div>
+                        <form asp-action="DeleteAnimal" method="post">
+                            <input type="hidden" name="animalId" value="@animal.AnimalId" />
+                            <div>
+                                <button type="submit" class="buttonDeleteInAnimals">Delete Animal</button>
+                            </div>
+                        </form>
+                        <form method="post" asp-action="EditAnimal" asp-route-animalId="@animal.AnimalId">
+                            <input type="hidden" name="animalId" value="@animal.AnimalId" />
+                            <button type="submit" class="buttonEditAnimal">Edit Animal</button>
+                        </form>
+                    </div>
+                    <div>
+                        <p>@animal.Description</p>
+                    </div>
+                    <div>
+                        <img src="~/images/@animal.PictureName" height="150px" width="233px" />
+                    </div>
+                    <div>
+                        <p class="NameAnimalDetails">@animal.AnimalName</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#animalSelect').change(function () {
+            var selectedCategory = $(this).val();
+
+            if (selectedCategory === 'all') {
+                $('.displayDetailsAnimal').show();
+            } else {
+                $('.displayDetailsAnimal').hide();
+                $('.displayDetailsAnimal[data-category="' + selectedCategory + '"]').show();
+            }
+        });
+    });
+</script>

@@ -1,0 +1,38 @@
+﻿@model ProjectAspNet.Models.Animal;
+@{
+    ViewData["Title"] = "Details Animal";
+}
+
+<h1>Details of Animal:</h1>
+<div class="detailsAnimal">
+     <div class="Animal">
+        <div class="patternDetails">
+            <div class="divImageAnimal">
+                <img src="~/images/@Model.PictureName" class="imageAnimal"  />
+            </div>
+            <div class="detailsAndComment">
+                <div class="Details">
+                    <div class="information">Category: @Model.Category!.CategoryName</div>
+                    <div class="information">Name: @Model.AnimalName</div>
+                    <div class="information">Age: @Model.Age</div>
+                    <div class="information"><span>Description: @Model.Description</span></div>
+                </div>
+                <div class="comment">
+                    <div>
+                        @foreach (var comment in Model.Comment!)
+                        {
+                            <p class="borderComment">@comment.CommentText</p>
+                        }
+                    </div>
+                    <form asp-action="AddComment" method="post">
+                        <textarea id="textareaComment" name="CommentText" placeholder="Add a comment" maxlength="60" required></textarea>
+                        <span asp-validation-for="Comment"></span>
+                        <input type="hidden" asp-for="AnimalId" />
+                        <div asp-validation-summary="All"></div>
+                        <button type="submit" value="AddComment" class="buttonAddComment">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>

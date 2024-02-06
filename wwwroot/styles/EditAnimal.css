@@ -1,0 +1,61 @@
+﻿body {
+}
+.titleEditAnimal{
+    text-decoration:underline;
+}
+.buttonBack{
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    padding:9px;
+    background-color:black;
+}
+.detailsAnimal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Animal {
+    width: 600px;
+    border: 4px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    font-size: 17px;
+    box-shadow: 10px 10px 5px gray inset;
+}
+.Animal>div{
+    margin:20px;
+}
+.divImageAnimal{
+    width:550px;
+    height:370px;
+}
+.imageAnimal {
+    width: 550px;
+    height: 340px;
+}
+.DetailsEdit{
+    width:550px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:start;
+    text-align:start;
+}
+.buttonEdit {
+    margin-top:15px;
+    margin-left:135px;
+    width: 280px;
+    height: 45px;
+    color: black;
+    background-color: lightblue;
+    border: none;
+    cursor: pointer;
+}
+.buttonEdit :hover{
+    background-color:pink;
+}

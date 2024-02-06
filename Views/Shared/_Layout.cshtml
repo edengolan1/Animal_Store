@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/styles/StyleSheet1.css" />
+    <link rel="stylesheet" href="~/styles/Category.css" />
+    <link rel="stylesheet" href="~/styles/DetailsAnimal.css" />
+    <link rel="stylesheet" href="~/styles/AddAnimal.css" />
+    <link rel="stylesheet" href="~/styles/EditAnimal.css" />
+    <link rel="stylesheet" href="~/styles/Admin.css" />
+    <link rel="stylesheet" href="~/styles/Login.css" />
+    <script src="~/scripts/JavaScript.js"></script>
+</head>
+<body>
+    <div>
+        <header>
+            <ul class="ul">
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/Animal/Category">Category Animals</a></li>
+                <li><a href="/Account/Login">Admin</a></li>
+            </ul>
+        </header>
+        @RenderBody()
+    </div>
+</body>
+</html>

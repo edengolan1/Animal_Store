@@ -1,0 +1,31 @@
+﻿.buttonOptionCategory {
+    margin-bottom: 15px;
+    margin-left: 1015px;
+}
+.bodyCategory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.buttonMoreDetails {
+    color: black;
+}
+.divbuttonMoreDetails :hover {
+    color: white;
+}
+.AButtonMoreDetails {
+    text-decoration: none;
+    cursor: pointer;
+}
+.divbuttonMoreDetails {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:23px;
+    width: 150px;
+    height: 35px;
+    border-radius:15px;
+    background-color:darkcyan;
+    cursor:pointer;
+}

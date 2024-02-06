@@ -1,0 +1,43 @@
+﻿@model ProjectAspNet.Models.Animal;
+@{
+    ViewData["Title"] = "NewAnimal";
+}
+<div class="bodyNewAnimal">
+    <h1 class="titleNewAnimal">New Animal:</h1>
+    <div class="addAnimal">
+        <div class="form">
+            <form name="formNewAnimal" method="post" asp-action="AddAnimal" enctype="multipart/form-data">
+                <div>
+                    <input type="hidden" asp-for="AnimalId" />
+                    <label asp-for="AnimalName">Name Animal:</label><br />
+                    <input type="text" asp-for=AnimalName name="AnimalName" placeholder="Name Animal" required/>
+                    <span asp-validation-for="AnimalName"></span>
+                </div>
+                <div>
+                    <label asp-for="Age">Age:</label><br />
+                    <input type="number" asp-for="Age" name="Age" placeholder="Age" required/>
+                    <span asp-validation-for="Age"></span>
+                </div>
+                <div>
+                    <label for="formFile">Picture Animal:</label><br />
+                    <input id="formFile" type="file" name="formFile" value="@Model?.formFile" accept="image/*" required />
+                </div>
+                <div>
+                    <label asp-for="Description">Description:</label><br />
+                    <textarea asp-for="Description" name="Description" placeholder="Description" maxlength="80" required></textarea>
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div>
+                    <label asp-for="CategoryId">Category:</label><br />
+                    <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))" required>
+                        <option>Select a Category</option>
+                    </select>
+                    <span asp-validation-for="CategoryId"></span>
+                </div>
+                <div class="divButtonAdd">
+                    <button class="buttonAdd" type="submit" value="submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

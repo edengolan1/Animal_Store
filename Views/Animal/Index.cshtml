@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjectAspNet.Models.Animal>
+@{
+    ViewBag.Title = "Catalog Animals Home";
+}
+
+<main class="bodyIndex">
+    <div class="titleInHomePage">
+        <p>Our Catalog of Animals</p>
+        <p>You can add comments for animals and view all of their details.</p>
+    </div>
+    <div class="backgroundPageHome">
+        <div class="contentHomePage">
+            @{
+                foreach (var animal in Model)
+                {
+                    <div class="displayAnimalsMoreComment">
+                            <div class="displayImage">
+                                <img src="~/images/@animal.PictureName" class="img"/>
+                            </div>
+                            <p class="nameAnimal">
+                                 @animal.AnimalName
+                            </p>
+                            <p class="description">
+                                 Description: @animal.Description
+                            </p>
+                            <p>
+                                Age: @animal.Age
+                            </p>
+                            <p>
+                               Category: @animal.Category!.CategoryName
+                            </p>
+                            <p>
+                                Comment: @animal.Comment!.Count
+                            </p>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</main>

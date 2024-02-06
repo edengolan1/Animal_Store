@@ -1,0 +1,128 @@
+﻿body {
+    text-align:center;
+}
+.bodyAdmin .LoginTrue {
+    background: lightblue;
+    position:relative;
+    right: 500px;
+    top: 43px;
+    padding:5px;
+    border-radius:70px;
+    color: gray;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.bodyAdmin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.titleAdmin{
+    text-decoration: underline;
+}
+.buttonNewAnimal {
+    width: 200px;
+    height: 45px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+    border: none;
+}
+.ANewAnimal {
+    text-decoration: none;
+    color:black;
+}
+.buttonNewAnimal :hover {
+    color:white;
+}
+.selectCategory {
+    margin-bottom:10px;
+}
+#animalSelect {
+    width: 150px;
+    height: 35px;
+    background-color: lightblue;
+    border:none;
+    border-radius: 7px;
+}
+.allAnimals {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 15px;
+}
+.displayDetailsAnimal {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+    width: 280px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px lightblue inset;
+}
+.AllButtons{
+    margin-top:8px;
+}
+.buttonDeleteInAnimals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: gray;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.buttonDeleteInAnimals :hover{
+    color:white;
+}
+.NameAnimalDetails {
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.buttonEditAnimal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background-color:lightgrey;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.buttonEditAnimal :hover{
+    color:white;
+}
+.divMoreDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: darkcyan;
+    cursor: pointer;
+}
+.divMoreDetails :hover{
+    color:white;
+}

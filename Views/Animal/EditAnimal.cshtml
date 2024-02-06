@@ -1,0 +1,55 @@
+﻿@model ProjectAspNet.Models.Animal;
+@{
+    ViewData["Title"] = "Edit Animal";
+}
+
+<h1 class="titleEditAnimal">Edit Animal</h1>
+<div>
+    <a asp-action="Admin" class="buttonBack">Back</a>
+</div>
+<div class="detailsAnimal">
+    <div class="Animal">
+        <div>
+            <form asp-action="UpDate" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="AnimalId" />
+                <div>
+                    <div class="divImageAnimal">
+                        <img src="~/images/@Model.PictureName" class="imageAnimal" />
+                        <input type="hidden" asp-for="PictureName" />
+                    </div>
+                </div>
+                <div class="DetailsEdit">
+                    <div>
+                        <label for="formFile">Select New Picture:</label><br />
+                        <input type="file" id="formFile" name="formFile" value="@Model?.formFile" accept="image/*" />
+                    </div>
+                    <div>
+                        <label asp-for="AnimalName">Animal Name:</label><br />
+                        <input type="text" asp-for=AnimalName name="AnimalName" value="@Model?.AnimalName" />
+                        <span asp-validation-for="AnimalName"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Age">Age:</label><br />
+                        <input type="number" asp-for="Age" name="Age" value="@Model?.Age" />
+                        <span asp-validation-for="Age"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Description">Description:</label><br />
+                        <textarea asp-for=Description placeholder="@Model?.Description" name="Description" maxlength="80"></textarea>
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                    <div>
+                        <label asp-for="CategoryId">Category:</label><br />
+                        <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))" required>
+                            <option value="">Select a Category</option>
+                        </select>
+                        <span asp-validation-for="CategoryId"></span>
+                    </div>
+                    <div>
+                        <button type="submit" value="editAnimal" class="buttonEdit">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
